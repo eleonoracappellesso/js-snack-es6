@@ -34,24 +34,68 @@ const bikes = [
 
 let lighterBike = bikes[0];
 for (let i = 0; i < bikes.length; i++) {
-    if(bikes[i].weight < lighterBike.weight){
+    if (bikes[i].weight < lighterBike.weight) {
         lighterBike = bikes[i];
     }
 }
 console.log(lighterBike);
 
-
-
-
-
 /*
 Snack2
 Creare un array di oggetti di squadre di calcio.
- Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
 Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
+const footballTeams = [
+    {
+        name: "Juventus",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Milan",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Inter",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Roma",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Napoli",
+        points: 0,
+        fouls: 0
+    },
+];
+// genero numeri random per point e fouls
+function randomValues(teams) {
+    for (var i = 0; i < teams.length; i++) {
+        teams[i].points = getRndInteger(0, 10);
+        teams[i].fouls = getRndInteger(0, 20);
+    }
+};
+randomValues(footballTeams);
+console.log(footballTeams);
+
+// creo un array in cui stampo solo i nomi delle squadre e i falli subiti
+const teamFouls = [];
+for (let i = 0; i < footballTeams.length; i++) {
+    let team = {
+        name: footballTeams[i].name,
+        fouls: footballTeams[i].fouls
+    };
+    teamFouls.push(team);
+}
+
+console.log("Ecco una lista con i nomi delle squadre e i rispettivi falli subiti: ", teamFouls);
 
 /*
 Snack 3 (Bonus)
