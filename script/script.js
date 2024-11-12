@@ -7,6 +7,42 @@ Creare un array di oggetti:
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare a schermo la bici con peso minore.
 */
+const bikes = [
+    {
+        name: "Bianchi Infinito CV",
+        weight: 7.5 // in kg
+    },
+    {
+        name: "Pinarello Dogma F12",
+        weight: 6.9 // in kg
+    },
+    {
+        name: "Canyon Ultimate CF SLX",
+        weight: 6.8 // in kg
+    },
+    {
+        name: "Trek Émonda SLR 9",
+        weight: 6.3 // in kg
+    },
+    {
+        name: "Specialized S-Works Tarmac SL7",
+        weight: 6.7 // in kg
+    }
+];
+
+// console.log(bikes);
+
+let lighterBike = bikes[0];
+for (let i = 0; i < bikes.length; i++) {
+    if(bikes[i].weight < lighterBike.weight){
+        lighterBike = bikes[i];
+    }
+}
+console.log(lighterBike);
+
+
+
+
 
 /*
 Snack2
