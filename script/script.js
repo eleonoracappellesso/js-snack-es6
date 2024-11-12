@@ -102,3 +102,20 @@ Snack 3 (Bonus)
 Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 */
+
+function createNewArray(myArray, a, b) {
+    if(a < b && a >= 0 && b <= myArray.length){
+        return myArray.slice(a, b);
+    } else {
+        console.log('Errore! Assicurati che tutti i valori siano validi.');
+    }
+}
+
+const myArray = [12, 7, 23, 39, 5, 28, 14, 19, 20, 31];
+let a = 3;
+let b = 8;
+
+console.log(`La mia array è: ${myArray}`);
+
+let newArray = createNewArray(myArray, a, b);
+console.log(`Tra l'indice a (${a}, compreso) e l'indice b (${b}, escluso), ci sono i seguenti varori: ${newArray}`);
